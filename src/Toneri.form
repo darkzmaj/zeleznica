@@ -26,7 +26,7 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane3" pref="1087" max="32767" attributes="0"/>
+                  <Component id="jScrollPane3" pref="1081" max="32767" attributes="0"/>
                   <Component id="jScrollPane1" alignment="1" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -45,6 +45,8 @@
                                       <Component id="jTextField5" min="-2" pref="50" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="minus" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="btnSacuvaj" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="jTextField1" alignment="0" pref="696" max="32767" attributes="0"/>
                                   <Component id="jTextField2" alignment="0" max="32767" attributes="0"/>
@@ -60,7 +62,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="314" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -77,8 +79,9 @@
                   <Component id="plus" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="minus" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jTextField5" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnSacuvaj" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jTextField1" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
                   <Component id="jTextField8" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -98,15 +101,15 @@
                   <Component id="jTextField11" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jTextField4" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnDodaj" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnIzmeni" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnObrisi" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
               <Component id="jScrollPane3" min="-2" pref="147" max="-2" attributes="0"/>
-              <EmptySpace pref="134" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -122,32 +125,38 @@
         <Component class="javax.swing.JTable" name="jTable1">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="5" rowCount="0">
-                <Column editable="true" title="Proizvodjac" type="java.lang.String"/>
-                <Column editable="true" title="Proizvod" type="java.lang.String"/>
-                <Column editable="true" title="Oznaka" type="java.lang.String"/>
-                <Column editable="true" title="Stampaci" type="java.lang.String"/>
-                <Column editable="false" title="Kolicina" type="java.lang.Integer"/>
+              <Table columnCount="6" rowCount="0">
+                <Column editable="false" title="ID" type="java.lang.Object"/>
+                <Column editable="false" title="Proizvodjac" type="java.lang.String"/>
+                <Column editable="false" title="Proizvod" type="java.lang.String"/>
+                <Column editable="false" title="Oznaka" type="java.lang.String"/>
+                <Column editable="false" title="Stampaci" type="java.lang.String"/>
+                <Column editable="false" title="Kolicina" type="java.lang.String"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
               <TableColumnModel selectionModel="0">
-                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                <Column maxWidth="-1" minWidth="-1" prefWidth="1" resizable="false">
                   <Title/>
                   <Editor/>
                   <Renderer/>
                 </Column>
-                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                   <Title/>
                   <Editor/>
                   <Renderer/>
                 </Column>
-                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                   <Title/>
                   <Editor/>
                   <Renderer/>
                 </Column>
-                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                   <Title/>
                   <Editor/>
                   <Renderer/>
@@ -278,6 +287,11 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField11ActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnSacuvaj">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Sacuvaj"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

@@ -19,9 +19,9 @@ public class Toneri extends javax.swing.JFrame {
     public Toneri() {
         initComponents();
         prikaziSve();
-        prikaziKomentare();
+
         inicijalizujKomponente();
-        //Object[] row = new Object[4];
+
     }
 
     /**
@@ -51,6 +51,7 @@ public class Toneri extends javax.swing.JFrame {
         jTextField9 = new javax.swing.JTextField();
         jTextField10 = new javax.swing.JTextField();
         jTextField11 = new javax.swing.JTextField();
+        btnSacuvaj = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,14 +60,14 @@ public class Toneri extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Proizvodjac", "Proizvod", "Oznaka", "Stampaci", "Kolicina"
+                "ID", "Proizvodjac", "Proizvod", "Oznaka", "Stampaci", "Kolicina"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+                java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                true, true, true, true, false
+                false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -79,7 +80,13 @@ public class Toneri extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1);
         if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(0).setResizable(false);
+            jTable1.getColumnModel().getColumn(0).setPreferredWidth(1);
+            jTable1.getColumnModel().getColumn(1).setResizable(false);
+            jTable1.getColumnModel().getColumn(2).setResizable(false);
+            jTable1.getColumnModel().getColumn(3).setResizable(false);
             jTable1.getColumnModel().getColumn(4).setResizable(false);
+            jTable1.getColumnModel().getColumn(5).setResizable(false);
         }
 
         plus.setText("+");
@@ -134,6 +141,8 @@ public class Toneri extends javax.swing.JFrame {
             }
         });
 
+        btnSacuvaj.setText("Sacuvaj");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -141,7 +150,7 @@ public class Toneri extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 1087, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 1081, Short.MAX_VALUE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -158,7 +167,9 @@ public class Toneri extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(minus))
+                                        .addComponent(minus)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(btnSacuvaj))
                                     .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 696, Short.MAX_VALUE)
                                     .addComponent(jTextField2)
                                     .addComponent(jTextField3)
@@ -169,7 +180,7 @@ public class Toneri extends javax.swing.JFrame {
                                     .addComponent(jTextField9)
                                     .addComponent(jTextField10)
                                     .addComponent(jTextField11))))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 314, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -181,7 +192,8 @@ public class Toneri extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(plus)
                     .addComponent(minus)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSacuvaj))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -198,14 +210,14 @@ public class Toneri extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(55, 55, 55)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnDodaj)
                     .addComponent(btnIzmeni)
                     .addComponent(btnObrisi))
-                .addGap(12, 12, 12)
+                .addGap(24, 24, 24)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(134, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -274,7 +286,7 @@ public class Toneri extends javax.swing.JFrame {
         ArrayList<Stampaci> stampaciList = new ArrayList<Stampaci>();
         Connection connection = getKonekcija();
 
-        String query = "SELECT proizvodjac, proizvod, oznaka, stampaci, kolicina from toneri";
+        String query = "SELECT toneriid, proizvodjac, proizvod, oznaka, stampaci, kolicina from toneri";
         Statement st;
         ResultSet rs;
 
@@ -283,7 +295,7 @@ public class Toneri extends javax.swing.JFrame {
             rs = st.executeQuery(query);
             Stampaci stampaci;
             while (rs.next()) {
-                stampaci = new Stampaci(rs.getString("Proizvodjac"), rs.getString("Proizvod"), rs.getString("Oznaka"), rs.getString("Stampaci"), rs.getInt("Kolicina"));
+                stampaci = new Stampaci(rs.getInt("toneriid"), rs.getString("Proizvodjac"), rs.getString("Proizvod"), rs.getString("Oznaka"), rs.getString("Stampaci"), rs.getInt("Kolicina"));
                 stampaciList.add(stampaci);
             }
         } catch (Exception e) {
@@ -296,13 +308,14 @@ public class Toneri extends javax.swing.JFrame {
     public void prikaziSve() {
         ArrayList<Stampaci> list = getStampac();
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        Object[] row = new Object[5];
+        Object[] row = new Object[6];
         for (int i = 0; i < list.size(); i++) {
-            row[0] = list.get(i).getProizvodjac();
-            row[1] = list.get(i).getProizvod();
-            row[2] = list.get(i).getOznaka();
-            row[3] = list.get(i).getStampaci();
-            row[4] = list.get(i).getKolicina();
+            row[0] = list.get(i).getStampacID();
+            row[1] = list.get(i).getProizvodjac();
+            row[2] = list.get(i).getProizvod();
+            row[3] = list.get(i).getOznaka();
+            row[4] = list.get(i).getStampaci();
+            row[5] = list.get(i).getKolicina();
 
             model.addRow(row);
         }
@@ -321,10 +334,13 @@ public class Toneri extends javax.swing.JFrame {
     }
 
     public ArrayList<Komentari> getKomentar() {
+        int i = jTable1.getSelectedRow()+1;
+        TableModel model = jTable1.getModel();
+
         ArrayList<Komentari> usersList = new ArrayList<Komentari>();
         Connection connection = getKonekcija();
 
-        String query = "SELECT komentar FROM  komentari order by komentariid";
+        String query = "SELECT komentar FROM  komentari where toneriid = " + i;
         Statement st;
         ResultSet rs;
 
@@ -346,6 +362,7 @@ public class Toneri extends javax.swing.JFrame {
     public void prikaziKomentare() {
         ArrayList<Komentari> list = getKomentar();
         DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
+        model.setRowCount(0);
         Object[] row = new Object[1];
         for (int i = 0; i < list.size(); i++) {
             row[0] = list.get(i).getKomentar();
@@ -375,20 +392,16 @@ public class Toneri extends javax.swing.JFrame {
     }
 
     private void jTable_Display_UsersMouseClicked(java.awt.event.MouseEvent evt) {
-        // Get The Index Of The Slected Row 
         int i = jTable1.getSelectedRow();
-
         TableModel model = jTable1.getModel();
+        jTextField1.setText(model.getValueAt(i, 1).toString());
+        jTextField2.setText(model.getValueAt(i, 2).toString());
+        jTextField3.setText(model.getValueAt(i, 3).toString());
+        jTextField4.setText(model.getValueAt(i, 4).toString());
+        jTextField5.setText(model.getValueAt(i, 5).toString());
 
-        // Display Slected Row In JTexteFields
-        jTextField1.setText(model.getValueAt(i, 0).toString());
+        prikaziKomentare();
 
-        jTextField2.setText(model.getValueAt(i, 1).toString());
-
-        jTextField3.setText(model.getValueAt(i, 2).toString());
-
-        jTextField4.setText(model.getValueAt(i, 3).toString());
-        jTextField5.setText(model.getValueAt(i, 4).toString());
     }
 
     private void jButton_InsertActionPerformed(java.awt.event.ActionEvent evt) {
@@ -401,6 +414,7 @@ public class Toneri extends javax.swing.JFrame {
     private javax.swing.JButton btnDodaj;
     private javax.swing.JButton btnIzmeni;
     private javax.swing.JButton btnObrisi;
+    private javax.swing.JButton btnSacuvaj;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;

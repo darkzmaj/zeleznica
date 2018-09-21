@@ -10,18 +10,21 @@
  */
 public class Stampaci {
 
-    private String proizvodjac;
-    private String proizvod;
-    private String oznaka;
-    private String stampaci;
-    private int kolicina;
-
-    public Stampaci(String proizvodjac, String proizvod, String oznaka, String stampaci, int kolicina) {
+    public Stampaci(int stampacID, String proizvodjac, String proizvod, String oznaka, String stampaci, int kolicina) {
+        this.stampacID = stampacID;
         this.proizvodjac = proizvodjac;
         this.proizvod = proizvod;
         this.oznaka = oznaka;
         this.stampaci = stampaci;
         this.kolicina = kolicina;
+    }
+
+    public int getStampacID() {
+        return stampacID;
+    }
+
+    public void setStampacID(int stampacID) {
+        this.stampacID = stampacID;
     }
 
     public String getProizvodjac() {
@@ -63,5 +66,14 @@ public class Stampaci {
     public void setKolicina(int kolicina) {
         this.kolicina = kolicina;
     }
+
+    private int stampacID;
+    private String proizvodjac;
+    private String proizvod;
+    private String oznaka;
+    private String stampaci;
+    private int kolicina;
+
+    
 
 }
