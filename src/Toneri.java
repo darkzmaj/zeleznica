@@ -19,9 +19,9 @@ public class Toneri extends javax.swing.JFrame {
     public Toneri() {
         initComponents();
         prikaziSve();
-
+        
         inicijalizujKomponente();
-
+        
     }
 
     /**
@@ -52,6 +52,9 @@ public class Toneri extends javax.swing.JFrame {
         jTextField10 = new javax.swing.JTextField();
         jTextField11 = new javax.swing.JTextField();
         btnSacuvaj = new javax.swing.JButton();
+        txtKomentar = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -108,7 +111,7 @@ public class Toneri extends javax.swing.JFrame {
 
             },
             new String [] {
-                "KomentarID", "Komentar", "DatumMozda"
+                "Komentar", "Datum"
             }
         ));
         jScrollPane3.setViewportView(jTable2);
@@ -121,8 +124,18 @@ public class Toneri extends javax.swing.JFrame {
         });
 
         btnIzmeni.setText("Izmeni");
+        btnIzmeni.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIzmeniActionPerformed(evt);
+            }
+        });
 
         btnObrisi.setText("Obrisi");
+        btnObrisi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnObrisiActionPerformed(evt);
+            }
+        });
 
         jTextField8.setEditable(false);
         jTextField8.setText("Proizvodjac");
@@ -142,6 +155,17 @@ public class Toneri extends javax.swing.JFrame {
         });
 
         btnSacuvaj.setText("Sacuvaj");
+        btnSacuvaj.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSacuvajActionPerformed(evt);
+            }
+        });
+
+        txtKomentar.setToolTipText("Komentar");
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane2.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -150,7 +174,7 @@ public class Toneri extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 1081, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 1548, Short.MAX_VALUE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -169,7 +193,9 @@ public class Toneri extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(minus)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btnSacuvaj))
+                                        .addComponent(btnSacuvaj)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(txtKomentar))
                                     .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 696, Short.MAX_VALUE)
                                     .addComponent(jTextField2)
                                     .addComponent(jTextField3)
@@ -180,41 +206,48 @@ public class Toneri extends javax.swing.JFrame {
                                     .addComponent(jTextField9)
                                     .addComponent(jTextField10)
                                     .addComponent(jTextField11))))
-                        .addGap(0, 314, Short.MAX_VALUE)))
+                        .addGap(27, 27, 27)
+                        .addComponent(jScrollPane2)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(5, 5, 5)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(plus)
-                    .addComponent(minus)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSacuvaj))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(4, 4, 4)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnDodaj)
-                    .addComponent(btnIzmeni)
-                    .addComponent(btnObrisi))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(5, 5, 5)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(plus)
+                            .addComponent(minus)
+                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnSacuvaj)
+                            .addComponent(txtKomentar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(4, 4, 4)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnDodaj)
+                            .addComponent(btnIzmeni)
+                            .addComponent(btnObrisi)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(240, 240, 240)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(24, 24, 24)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -231,6 +264,14 @@ public class Toneri extends javax.swing.JFrame {
 
     private void btnDodajActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDodajActionPerformed
         // TODO add your handling code here:
+        int i = jTable1.getSelectedRow();
+        TableModel model = jTable1.getModel();
+        String b = model.getValueAt(i, 0).toString();
+        
+        String query2 = "INSERT INTO `zeleznica`.`toneri` (`proizvodjac`, `proizvod`, `oznaka`, `stampaci`, `kolicina`) VALUES ('" + jTextField1.getText() + "', '" + jTextField2.getText() + "', '" + jTextField3.getText() + "', '" + jTextField4.getText() + "', '" + jTextField5.getText() + "');";
+
+        //jTextArea1.setText(query2);
+        executeSQlQuery(query2, "Inserted");
     }//GEN-LAST:event_btnDodajActionPerformed
 
     private void jTextField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField11ActionPerformed
@@ -241,9 +282,47 @@ public class Toneri extends javax.swing.JFrame {
         // TODO add your handling code here:
         int i = Integer.parseInt(jTextField5.getText()) - 1;
         jTextField5.setText(Integer.toString(i));
-
+        
 
     }//GEN-LAST:event_minusActionPerformed
+
+    private void btnSacuvajActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSacuvajActionPerformed
+        //dugme sacuvaj kolicinu
+
+        int i = jTable1.getSelectedRow();
+        TableModel model = jTable1.getModel();
+        String b = model.getValueAt(i, 0).toString();
+        
+        String q5 = "UPDATE `zeleznica`.`toneri` SET `kolicina` = " + jTextField5.getText() + " where toneriid = " + b;
+        String q6 = "INSERT INTO `zeleznica`.`komentari` (`toneriid`, `Komentar`, `DatumIzmene`) VALUES ('" + b + "', '" + txtKomentar.getText() + "', NOW());";
+        // jTextArea1.setText(q6);
+        executeSQlQuery(q6, "Inserted");
+        executeSQlQuery(q5, "Inserted");
+        prikaziKomentare();
+    }//GEN-LAST:event_btnSacuvajActionPerformed
+
+    private void btnObrisiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnObrisiActionPerformed
+        // TODO add your handling code here:
+        //String query = "INSERT INTO `users`(`fname`, `lname`, `age`) VALUES ('" + jTextField_FirstName.getText() + "','" + jTextField_LastName.getText() + "'," + jTextField_Age.getText() + ")";
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        int i = jTable1.getSelectedRow();
+        String b = model.getValueAt(i, 0).toString();
+        //txtKomentar.setText(b);
+
+        String query = "delete from toneri where toneriid = " + b;
+        executeSQlQuery(query, "Inserted");
+    }//GEN-LAST:event_btnObrisiActionPerformed
+
+    private void btnIzmeniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIzmeniActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        int i = jTable1.getSelectedRow();
+        String b = model.getValueAt(i, 0).toString();
+        //txtKomentar.setText(b);
+
+        String query = "UPDATE toneri SET `proizvodjac` = '" + jTextField1.getText() + "', `proizvod` = '" + jTextField2.getText() + "', `oznaka` = '" + jTextField3.getText() + "', `stampaci` = '" + jTextField4.getText() + "' WHERE `toneriid` = " + b;
+        executeSQlQuery(query, "Inserted");
+    }//GEN-LAST:event_btnIzmeniActionPerformed
 
     /**
      * @param args the command line arguments
@@ -278,18 +357,18 @@ public class Toneri extends javax.swing.JFrame {
                 new Toneri().setVisible(true);
             }
         });
-
+        
     }
 
 //
     public ArrayList<Stampaci> getStampac() {
         ArrayList<Stampaci> stampaciList = new ArrayList<Stampaci>();
         Connection connection = getKonekcija();
-
+        
         String query = "SELECT toneriid, proizvodjac, proizvod, oznaka, stampaci, kolicina from toneri";
         Statement st;
         ResultSet rs;
-
+        
         try {
             st = connection.createStatement();
             rs = st.executeQuery(query);
@@ -316,7 +395,7 @@ public class Toneri extends javax.swing.JFrame {
             row[3] = list.get(i).getOznaka();
             row[4] = list.get(i).getStampaci();
             row[5] = list.get(i).getKolicina();
-
+            
             model.addRow(row);
         }
     }
@@ -324,7 +403,7 @@ public class Toneri extends javax.swing.JFrame {
 
     public Connection getKonekcija() {
         try {
-
+            
             Connection konekcija = DriverManager.getConnection("jdbc:mysql://localhost/zeleznica", "root", "root");
             return konekcija;
         } catch (Exception e) {
@@ -332,30 +411,31 @@ public class Toneri extends javax.swing.JFrame {
             return null;
         }
     }
-
+    
     public ArrayList<Komentari> getKomentar() {
-        int i = jTable1.getSelectedRow()+1;
+        int i = jTable1.getSelectedRow() + 1;
         TableModel model = jTable1.getModel();
-
-        ArrayList<Komentari> usersList = new ArrayList<Komentari>();
+        
+        ArrayList<Komentari> komentariList = new ArrayList<Komentari>();
         Connection connection = getKonekcija();
-
-        String query = "SELECT komentar FROM  komentari where toneriid = " + i;
+        
+        String query = "select komentar, DATE_FORMAT(datumizmene,'%d.%m.%Y') FROM  komentari where toneriid = " + i + " order by komentariid desc";
+        String query2 = "select komentar, DATE_FORMAT(datumizmene,'%d.%m.%Y') FROM  komentari where toneriid = " + i;
         Statement st;
         ResultSet rs;
-
+        
         try {
             st = connection.createStatement();
-            rs = st.executeQuery(query);
+            rs = st.executeQuery(query2);
             Komentari komentari;
             while (rs.next()) {
-                komentari = new Komentari(rs.getString("Komentar"));
-                usersList.add(komentari);
+                komentari = new Komentari(rs.getString("Komentar"), rs.getString("DATE_FORMAT(datumizmene,'%d.%m.%Y')"));
+                komentariList.add(komentari);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return usersList;
+        return komentariList;
     }
 
     //  
@@ -363,34 +443,35 @@ public class Toneri extends javax.swing.JFrame {
         ArrayList<Komentari> list = getKomentar();
         DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
         model.setRowCount(0);
-        Object[] row = new Object[1];
+        Object[] row = new Object[2];
         for (int i = 0; i < list.size(); i++) {
             row[0] = list.get(i).getKomentar();
-
+            row[1] = list.get(i).getDatum();
+            
             model.addRow(row);
         }
     }
-
+    
     public void executeSQlQuery(String query, String message) {
         Connection con = getKonekcija();
         Statement st;
         try {
             st = con.createStatement();
             if ((st.executeUpdate(query)) == 1) {
-
+                
                 DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
                 model.setRowCount(0);
                 prikaziSve();
-
-                JOptionPane.showMessageDialog(null, "Data " + message + " Succefully");
+                
+                JOptionPane.showMessageDialog(null, "Data " + message + " uspesno");
             } else {
-                JOptionPane.showMessageDialog(null, "Data Not " + message);
+                JOptionPane.showMessageDialog(null, "Data nije " + message);
             }
         } catch (Exception ex) {
             ex.printStackTrace();
         }
     }
-
+    
     private void jTable_Display_UsersMouseClicked(java.awt.event.MouseEvent evt) {
         int i = jTable1.getSelectedRow();
         TableModel model = jTable1.getModel();
@@ -401,9 +482,9 @@ public class Toneri extends javax.swing.JFrame {
         jTextField5.setText(model.getValueAt(i, 5).toString());
 
         prikaziKomentare();
-
+        jTextArea1.setText(model.getValueAt(i, 0).toString());
     }
-
+    
     private void jButton_InsertActionPerformed(java.awt.event.ActionEvent evt) {
         //String query = "INSERT INTO `users`(`fname`, `lname`, `age`) VALUES ('" + jTextField_FirstName.getText() + "','" + jTextField_LastName.getText() + "'," + jTextField_Age.getText() + ")";
         String query = "INSERT INTO `zeleznica`.`toneri` (`proizvodjac`, `proizvod`, `oznaka`, `stampaci`, `kolicina`) VALUES ('" + jTextField1.getText() + "', '" + jTextField2.getText() + "', '" + jTextField3.getText() + "', '" + jTextField4.getText() + "', '2');";
@@ -416,9 +497,11 @@ public class Toneri extends javax.swing.JFrame {
     private javax.swing.JButton btnObrisi;
     private javax.swing.JButton btnSacuvaj;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
@@ -430,6 +513,7 @@ public class Toneri extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField9;
     private javax.swing.JButton minus;
     private javax.swing.JButton plus;
+    private javax.swing.JTextField txtKomentar;
     // End of variables declaration//GEN-END:variables
 
     private void inicijalizujKomponente() {
