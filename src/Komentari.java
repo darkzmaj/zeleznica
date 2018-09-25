@@ -10,10 +10,24 @@
  */
 public class Komentari {
 
-    private String komentar;
+    public Komentari(String komentar, String datum) {
+        this.komentar = komentar;
+        this.datum = datum;
+    }
 
     public Komentari(String komentar) {
         this.komentar = komentar;
+    }
+
+    private String komentar;
+    private String datum;
+
+    public String getDatum() {
+        return datum;
+    }
+
+    public void setDatum(String datum) {
+        this.datum = datum;
     }
 
 //Geteri i seteri

@@ -413,14 +413,16 @@ public class Toneri extends javax.swing.JFrame {
     }
     
     public ArrayList<Komentari> getKomentar() {
-        int i = jTable1.getSelectedRow() + 1;
+        int i = jTable1.getSelectedRow();
         TableModel model = jTable1.getModel();
+        String b = model.getValueAt(i, 0).toString();
         
         ArrayList<Komentari> komentariList = new ArrayList<Komentari>();
         Connection connection = getKonekcija();
         
         String query = "select komentar, DATE_FORMAT(datumizmene,'%d.%m.%Y') FROM  komentari where toneriid = " + i + " order by komentariid desc";
-        String query2 = "select komentar, DATE_FORMAT(datumizmene,'%d.%m.%Y') FROM  komentari where toneriid = " + i;
+        String query2 = "select komentar, DATE_FORMAT(datumizmene,'%d.%m.%Y') FROM  komentari where toneriid = " + b;
+        String query3 = "select komentar from komentari where toneriid = " + b;
         Statement st;
         ResultSet rs;
         
