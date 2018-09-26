@@ -8,11 +8,20 @@
  *
  * @author Zmaj9
  */
-public class Stampaci {
+public class Pretraga {
 
-    public Stampaci(int stampacID, String proizvodjac, String proizvod, String oznaka, String stampaci, int kolicina) {
+    private int stampacID;
+    private String proizvodjac;
+    private String tip;
+    private String proizvod;
+    private String oznaka;
+    private String stampaci;
+    private int kolicina;
+
+    public Pretraga(int stampacID, String proizvodjac, String tip, String proizvod, String oznaka, String stampaci, int kolicina) {
         this.stampacID = stampacID;
         this.proizvodjac = proizvodjac;
+        this.tip = tip;
         this.proizvod = proizvod;
         this.oznaka = oznaka;
         this.stampaci = stampaci;
@@ -33,6 +42,14 @@ public class Stampaci {
 
     public void setProizvodjac(String proizvodjac) {
         this.proizvodjac = proizvodjac;
+    }
+
+    public String getTip() {
+        return tip;
+    }
+
+    public void setTip(String tip) {
+        this.tip = tip;
     }
 
     public String getProizvod() {
@@ -66,14 +83,5 @@ public class Stampaci {
     public void setKolicina(int kolicina) {
         this.kolicina = kolicina;
     }
-
-    private int stampacID;
-    private String proizvodjac;
-    private String proizvod;
-    private String oznaka;
-    private String stampaci;
-    private int kolicina;
-
-    
 
 }
