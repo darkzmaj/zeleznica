@@ -49,6 +49,9 @@ public class Program extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         textFieldPretraga = new javax.swing.JTextField();
         btnPretraga = new javax.swing.JButton();
+        btnOcistiPretragu = new javax.swing.JButton();
+        btnPrikaziSve = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -178,6 +181,22 @@ public class Program extends javax.swing.JFrame {
             }
         });
 
+        btnOcistiPretragu.setText("Ocisti");
+        btnOcistiPretragu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOcistiPretraguActionPerformed(evt);
+            }
+        });
+
+        btnPrikaziSve.setText("Prikazi sve");
+        btnPrikaziSve.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPrikaziSveActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setText("Oznaka");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -216,25 +235,28 @@ public class Program extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel6)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(textFieldPretraga, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(216, 216, 216)
+                                        .addComponent(jLabel7))
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel5)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel2)
+                                            .addComponent(jLabel1)
+                                            .addComponent(jLabel3))
+                                        .addGap(124, 124, 124)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jLabel1)
-                                                .addGap(119, 119, 119)
-                                                .addComponent(btnPretraga))
-                                            .addComponent(jLabel3)
-                                            .addComponent(jLabel4)
-                                            .addComponent(jLabel5))
-                                        .addGap(0, 0, Short.MAX_VALUE)))))
-                        .addGap(565, 565, 565))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1548, Short.MAX_VALUE)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 1548, Short.MAX_VALUE))
-                        .addContainerGap())))
+                                                .addComponent(btnOcistiPretragu)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(btnPretraga)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(btnPrikaziSve))
+                                            .addComponent(textFieldPretraga, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1548, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 1548, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -249,20 +271,28 @@ public class Program extends javax.swing.JFrame {
                     .addComponent(txtKomentar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6)
-                    .addComponent(textFieldPretraga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel7))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1)
-                    .addComponent(btnPretraga))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(textFieldPretraga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnPretraga)
+                            .addComponent(btnOcistiPretragu)
+                            .addComponent(btnPrikaziSve))))
                 .addGap(4, 4, 4)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -271,7 +301,7 @@ public class Program extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnDodaj)
                     .addComponent(btnIzmeni)
@@ -281,6 +311,8 @@ public class Program extends javax.swing.JFrame {
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jTextField1, jTextField2, jTextField3, jTextField4, jTextField5});
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -297,8 +329,8 @@ public class Program extends javax.swing.JFrame {
     //insert update delete dugmad i dodavanje komentara
     private void btnDodajActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDodajActionPerformed
         int i = jTable1.getSelectedRow();
-        TableModel model = jTable1.getModel();
-        String b = model.getValueAt(i, 0).toString();
+        TableModel model = jTable1.getModel();  //nisam siguran zasto sam ovo pisao
+        String b = model.getValueAt(i, 0).toString();//ni ovo
         String query = "INSERT INTO `zeleznica`.`toneri` (`proizvodjac`, tip, `proizvod`, `oznaka`, `stampaci`, `kolicina`) VALUES ('" + jTextField1.getText() + "','" + jTextField2.getText() + "', '" + jTextField3.getText() + "', '" + jTextField4.getText() + "', '" + jTextField5.getText() + "', '" + jTextField6.getText() + "');";
         executeSQlQuery(query, "Inserted");
 
@@ -358,12 +390,7 @@ public class Program extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField6ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        jTextField1.setText(null);
-        jTextField2.setText(null);
-        jTextField3.setText(null);
-        jTextField4.setText(null);
-        jTextField5.setText(null);
-        jTextField6.setText(null);
+        ocistiSve();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnPretragaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPretragaActionPerformed
@@ -374,6 +401,15 @@ public class Program extends javax.swing.JFrame {
     private void textFieldPretragaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldPretragaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textFieldPretragaActionPerformed
+
+    private void btnOcistiPretraguActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOcistiPretraguActionPerformed
+        textFieldPretraga.setText(null);
+    }//GEN-LAST:event_btnOcistiPretraguActionPerformed
+
+    private void btnPrikaziSveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrikaziSveActionPerformed
+        // TODO add your handling code here:
+        prikaziSve();
+    }//GEN-LAST:event_btnPrikaziSveActionPerformed
 
     /**
      * @param args the command line arguments
@@ -409,10 +445,9 @@ public class Program extends javax.swing.JFrame {
                 new Program().setVisible(true);
             }
         });
-
     }
-
 //
+
     public ArrayList<Toneri> getStampac() {
         ArrayList<Toneri> stampaciList = new ArrayList<Toneri>();
         Connection connection = getKonekcija();
@@ -435,7 +470,7 @@ public class Program extends javax.swing.JFrame {
         return stampaciList;
     }
 
-        public void pretraga() {
+    public void pretraga() {
         ArrayList<Toneri> list = getPretraga();
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         model.setRowCount(0);
@@ -453,28 +488,27 @@ public class Program extends javax.swing.JFrame {
             //
         }
     }
-    
+
     public ArrayList<Toneri> getPretraga() {
-        ArrayList<Toneri> pretragaList = new ArrayList<Toneri>();
+        ArrayList<Toneri> stampaciList = new ArrayList<Toneri>();
         Connection connection = getKonekcija();
 
-        String query = "SELECT toneriid, proizvodjac, tip, proizvod, oznaka, stampaci, kolicina from toneri where oznaka like '%"+ textFieldPretraga.toString() +"%';";
-        String query2 = "SELECT toneriid, proizvodjac, tip, proizvod, oznaka, stampaci, kolicina from toneri where oznaka like '%a%';";
+        String query = "SELECT toneriid, proizvodjac, tip, proizvod, oznaka, stampaci, kolicina from toneri where oznaka like '%" + textFieldPretraga.getText() + "%';";
         Statement st;
         ResultSet rs;
 
         try {
             st = connection.createStatement();
             rs = st.executeQuery(query);
-            Toneri pretraga;
+            Toneri stampaci;
             while (rs.next()) {
-                pretraga = new Toneri(rs.getInt("toneriid"),  rs.getString("Proizvodjac"),rs.getString("Tip"), rs.getString("Proizvod"), rs.getString("Oznaka"), rs.getString("Stampaci"), rs.getInt("Kolicina"));
-                pretragaList.add(pretraga);
+                stampaci = new Toneri(rs.getInt("toneriid"), rs.getString("Tip"), rs.getString("Proizvodjac"), rs.getString("Proizvod"), rs.getString("Oznaka"), rs.getString("Stampaci"), rs.getInt("Kolicina"));
+                stampaciList.add(stampaci);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return pretragaList;
+        return stampaciList;
     }
     //
 
@@ -563,18 +597,32 @@ public class Program extends javax.swing.JFrame {
         }
     }
 
-
-
     private void jTable_Display_UsersMouseClicked(java.awt.event.MouseEvent evt) {
         int i = jTable1.getSelectedRow();
         TableModel model = jTable1.getModel();
+        ocistiSve(); //da ne prikazuje podatke koji su ostali u bufferu
+
         jTextField1.setText(model.getValueAt(i, 1).toString());
         jTextField2.setText(model.getValueAt(i, 2).toString());
         jTextField3.setText(model.getValueAt(i, 3).toString());
-        jTextField4.setText(model.getValueAt(i, 4).toString());
+        //pokusaj
+        if (model.getValueAt(i, 4).toString().equals("")) {
+            jTextField4.setText("/");
+        } else {
+            jTextField4.setText(model.getValueAt(i, 4).toString());
+        }
         jTextField5.setText(model.getValueAt(i, 5).toString());
         jTextField6.setText(model.getValueAt(i, 6).toString());
         prikaziKomentare();
+    }
+
+    public void ocistiSve() {
+        jTextField1.setText(null);
+        jTextField2.setText(null);
+        jTextField3.setText(null);
+        jTextField4.setText(null);
+        jTextField5.setText(null);
+        jTextField6.setText(null);
     }
 
 
@@ -582,7 +630,9 @@ public class Program extends javax.swing.JFrame {
     private javax.swing.JButton btnDodaj;
     private javax.swing.JButton btnIzmeni;
     private javax.swing.JButton btnObrisi;
+    private javax.swing.JButton btnOcistiPretragu;
     private javax.swing.JButton btnPretraga;
+    private javax.swing.JButton btnPrikaziSve;
     private javax.swing.JButton btnSacuvaj;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
@@ -591,6 +641,7 @@ public class Program extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
