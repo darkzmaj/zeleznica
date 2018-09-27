@@ -395,6 +395,7 @@ public class Program extends javax.swing.JFrame {
             String b = model.getValueAt(i, 0).toString();
 
             String query1 = "UPDATE toneri SET `kolicina` = " + jTextField6.getText() + " where toneriid = " + b;
+
             String query2 = "INSERT INTO komentari (`toneriid`, `Komentar`, `DatumIzmene`) "
                     + "VALUES ("
                     + "'" + b + "', '" + txtKomentar.getText() + "', NOW());";
@@ -483,8 +484,7 @@ public class Program extends javax.swing.JFrame {
         ArrayList<Toneri> stampaciList = new ArrayList<Toneri>();
         Connection connection = getKonekcija();
 
-        String query = "SELECT toneriid, proizvodjac, tip, proizvod, oznaka, stampaci, kolicina from toneri";
-        String query2 = "SELECT toneriid, ifnull(proizvodjac, '/'), ifnull(tip, '/'), ifnull(proizvod, '/'), ifnull(oznaka, '/'), ifnull(stampaci, '/'), kolicina from toneri;";
+        String query2 = "SELECT toneriid, ifnull(proizvodjac, '/'), ifnull(tip, '/'), ifnull(proizvod, '/'), ifnull(oznaka, '/'), ifnull(stampaci, '/'), ifnull(kolicina, '0') from toneri;";
         Statement st;
         ResultSet rs;
 
@@ -493,7 +493,7 @@ public class Program extends javax.swing.JFrame {
             rs = st.executeQuery(query2);
             Toneri stampaci;
             while (rs.next()) {
-                stampaci = new Toneri(rs.getInt("toneriid"), rs.getString("ifnull(proizvodjac, '/')"), rs.getString("ifnull(tip, '/')"), rs.getString("ifnull(proizvod, '/')"), rs.getString("ifnull(oznaka, '/')"), rs.getString("ifnull(stampaci, '/')"), rs.getInt("Kolicina"));
+                stampaci = new Toneri(rs.getInt("toneriid"), rs.getString("ifnull(proizvodjac, '/')"), rs.getString("ifnull(tip, '/')"), rs.getString("ifnull(proizvod, '/')"), rs.getString("ifnull(oznaka, '/')"), rs.getString("ifnull(stampaci, '/')"), rs.getInt("ifnull(kolicina, '0')"));
                 stampaciList.add(stampaci);
             }
         } catch (Exception e) {
@@ -509,8 +509,8 @@ public class Program extends javax.swing.JFrame {
         Object[] row = new Object[7];
         for (int i = 0; i < list.size(); i++) {
             row[0] = list.get(i).getStampacID();
-            row[1] = list.get(i).getTip();
-            row[2] = list.get(i).getProizvodjac();
+            row[1] = list.get(i).getProizvodjac();
+            row[2] = list.get(i).getTip();
             row[3] = list.get(i).getProizvod();
             row[4] = list.get(i).getOznaka();
             row[5] = list.get(i).getStampaci();
@@ -525,7 +525,7 @@ public class Program extends javax.swing.JFrame {
         ArrayList<Toneri> stampaciList = new ArrayList<Toneri>();
         Connection connection = getKonekcija();
 
-        String query = "SELECT toneriid, proizvodjac, tip, proizvod, oznaka, stampaci, kolicina from toneri where proizvod like '%" + textFieldPretraga.getText() + "%';";
+        String query = "SELECT toneriid, ifnull(proizvodjac, '/'), ifnull(tip, '/'), ifnull(proizvod, '/'), ifnull(oznaka, '/'), ifnull(stampaci, '/'), ifnull(kolicina, '0') from toneri where proizvod like '%" + textFieldPretraga.getText() + "%';";
         Statement st;
         ResultSet rs;
 
@@ -534,7 +534,7 @@ public class Program extends javax.swing.JFrame {
             rs = st.executeQuery(query);
             Toneri stampaci;
             while (rs.next()) {
-                stampaci = new Toneri(rs.getInt("toneriid"), rs.getString("Tip"), rs.getString("Proizvodjac"), rs.getString("Proizvod"), rs.getString("Oznaka"), rs.getString("Stampaci"), rs.getInt("Kolicina"));
+                stampaci = new Toneri(rs.getInt("toneriid"), rs.getString("ifnull(proizvodjac, '/')"), rs.getString("ifnull(tip, '/')"), rs.getString("ifnull(proizvod, '/')"), rs.getString("ifnull(oznaka, '/')"), rs.getString("ifnull(stampaci, '/')"), rs.getInt("ifnull(kolicina, '0')"));
                 stampaciList.add(stampaci);
             }
         } catch (Exception e) {
@@ -542,16 +542,17 @@ public class Program extends javax.swing.JFrame {
         }
         return stampaciList;
     }
+
     //
-        public void pretragaOznaka() {
+    public void pretragaOznaka() {
         ArrayList<Toneri> list = getPretragaOznaka();
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         model.setRowCount(0);
         Object[] row = new Object[7];
         for (int i = 0; i < list.size(); i++) {
             row[0] = list.get(i).getStampacID();
-            row[1] = list.get(i).getTip();
-            row[2] = list.get(i).getProizvodjac();
+            row[1] = list.get(i).getProizvodjac();
+            row[2] = list.get(i).getTip();
             row[3] = list.get(i).getProizvod();
             row[4] = list.get(i).getOznaka();
             row[5] = list.get(i).getStampaci();
@@ -566,7 +567,7 @@ public class Program extends javax.swing.JFrame {
         ArrayList<Toneri> stampaciList = new ArrayList<Toneri>();
         Connection connection = getKonekcija();
 
-        String query = "SELECT toneriid, proizvodjac, tip, proizvod, oznaka, stampaci, kolicina from toneri where oznaka like '%" + textFieldPretraga.getText() + "%';";
+        String query = "SELECT toneriid, ifnull(proizvodjac, '/'), ifnull(tip, '/'), ifnull(proizvod, '/'), ifnull(oznaka, '/'), ifnull(stampaci, '/'), ifnull(kolicina, '0') from toneri where oznaka like '%" + textFieldPretraga.getText() + "%';";
         Statement st;
         ResultSet rs;
 
@@ -575,7 +576,7 @@ public class Program extends javax.swing.JFrame {
             rs = st.executeQuery(query);
             Toneri stampaci;
             while (rs.next()) {
-                stampaci = new Toneri(rs.getInt("toneriid"), rs.getString("Tip"), rs.getString("Proizvodjac"), rs.getString("Proizvod"), rs.getString("Oznaka"), rs.getString("Stampaci"), rs.getInt("Kolicina"));
+                stampaci = new Toneri(rs.getInt("toneriid"), rs.getString("ifnull(proizvodjac, '/')"), rs.getString("ifnull(tip, '/')"), rs.getString("ifnull(proizvod, '/')"), rs.getString("ifnull(oznaka, '/')"), rs.getString("ifnull(stampaci, '/')"), rs.getInt("ifnull(kolicina, '0')"));
                 stampaciList.add(stampaci);
             }
         } catch (Exception e) {
@@ -583,17 +584,17 @@ public class Program extends javax.swing.JFrame {
         }
         return stampaciList;
     }
-    
+
     //
-        public void pretragaStampac() {
+    public void pretragaStampac() {
         ArrayList<Toneri> list = getPretragaStampac();
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         model.setRowCount(0);
         Object[] row = new Object[7];
         for (int i = 0; i < list.size(); i++) {
             row[0] = list.get(i).getStampacID();
-            row[1] = list.get(i).getTip();
-            row[2] = list.get(i).getProizvodjac();
+            row[1] = list.get(i).getProizvodjac();
+            row[2] = list.get(i).getTip();
             row[3] = list.get(i).getProizvod();
             row[4] = list.get(i).getOznaka();
             row[5] = list.get(i).getStampaci();
@@ -608,7 +609,7 @@ public class Program extends javax.swing.JFrame {
         ArrayList<Toneri> stampaciList = new ArrayList<Toneri>();
         Connection connection = getKonekcija();
 
-        String query = "SELECT toneriid, proizvodjac, tip, proizvod, oznaka, stampaci, kolicina from toneri where stampaci like '%" + textFieldPretraga.getText() + "%';";
+        String query = "SELECT toneriid, ifnull(proizvodjac, '/'), ifnull(tip, '/'), ifnull(proizvod, '/'), ifnull(oznaka, '/'), ifnull(stampaci, '/'), ifnull(kolicina, '0') from toneri where stampaci like '%" + textFieldPretraga.getText() + "%';";
         Statement st;
         ResultSet rs;
 
@@ -617,7 +618,7 @@ public class Program extends javax.swing.JFrame {
             rs = st.executeQuery(query);
             Toneri stampaci;
             while (rs.next()) {
-                stampaci = new Toneri(rs.getInt("toneriid"), rs.getString("Tip"), rs.getString("Proizvodjac"), rs.getString("Proizvod"), rs.getString("Oznaka"), rs.getString("Stampaci"), rs.getInt("Kolicina"));
+                stampaci = new Toneri(rs.getInt("toneriid"), rs.getString("ifnull(proizvodjac, '/')"), rs.getString("ifnull(tip, '/')"), rs.getString("ifnull(proizvod, '/')"), rs.getString("ifnull(oznaka, '/')"), rs.getString("ifnull(stampaci, '/')"), rs.getInt("ifnull(kolicina, '0')"));
                 stampaciList.add(stampaci);
             }
         } catch (Exception e) {
@@ -632,8 +633,8 @@ public class Program extends javax.swing.JFrame {
         Object[] row = new Object[7];
         for (int i = 0; i < list.size(); i++) {
             row[0] = list.get(i).getStampacID();
-            row[1] = list.get(i).getTip();
-            row[2] = list.get(i).getProizvodjac();
+            row[1] = list.get(i).getProizvodjac();
+            row[2] = list.get(i).getTip();
             row[3] = list.get(i).getProizvod();
             row[4] = list.get(i).getOznaka();
             row[5] = list.get(i).getStampaci();
