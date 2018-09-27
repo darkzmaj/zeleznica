@@ -51,7 +51,9 @@ public class Program extends javax.swing.JFrame {
         btnPretraga = new javax.swing.JButton();
         btnOcistiPretragu = new javax.swing.JButton();
         btnPrikaziSve = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
+        btnPretraga1 = new javax.swing.JButton();
+        btnPretraga2 = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -174,14 +176,14 @@ public class Program extends javax.swing.JFrame {
             }
         });
 
-        btnPretraga.setText("Pretraga");
+        btnPretraga.setText("Pretrazi proizvod");
         btnPretraga.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPretragaActionPerformed(evt);
             }
         });
 
-        btnOcistiPretragu.setText("Ocisti");
+        btnOcistiPretragu.setText("Ocisti sve");
         btnOcistiPretragu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnOcistiPretraguActionPerformed(evt);
@@ -195,7 +197,22 @@ public class Program extends javax.swing.JFrame {
             }
         });
 
-        jLabel7.setText("Oznaka");
+        btnPretraga1.setText("Pretrazi oznaku");
+        btnPretraga1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPretraga1ActionPerformed(evt);
+            }
+        });
+
+        btnPretraga2.setText("Pretrazi stampac");
+        btnPretraga2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPretraga2ActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setText("Pretraga");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -204,58 +221,54 @@ public class Program extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1548, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 1548, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(plus)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(minus)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnSacuvaj)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtKomentar))
+                            .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 696, Short.MAX_VALUE)
+                            .addComponent(jTextField2)
+                            .addComponent(jTextField3)
+                            .addComponent(jTextField4)
+                            .addComponent(jTextField5))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnDodaj)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnIzmeni)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnObrisi)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton1))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(plus)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(minus)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btnSacuvaj)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(txtKomentar))
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 696, Short.MAX_VALUE)
-                                    .addComponent(jTextField2)
-                                    .addComponent(jTextField3)
-                                    .addComponent(jTextField4)
-                                    .addComponent(jTextField5))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel6)
-                                        .addGap(216, 216, 216)
-                                        .addComponent(jLabel7))
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel5)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel2)
-                                            .addComponent(jLabel1)
-                                            .addComponent(jLabel3))
-                                        .addGap(124, 124, 124)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(btnOcistiPretragu)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(btnPretraga)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(btnPrikaziSve))
-                                            .addComponent(textFieldPretraga, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1548, Short.MAX_VALUE)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 1548, Short.MAX_VALUE))
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel3))
+                                .addGap(124, 124, 124)
+                                .addComponent(btnPretraga))
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnPrikaziSve, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(textFieldPretraga)
+                            .addComponent(btnPretraga1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnOcistiPretragu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(btnPretraga2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnDodaj)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnIzmeni)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnObrisi)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton1)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -263,15 +276,19 @@ public class Program extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(5, 5, 5)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(plus)
-                    .addComponent(minus)
-                    .addComponent(btnSacuvaj)
-                    .addComponent(txtKomentar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel7))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(plus)
+                            .addComponent(minus)
+                            .addComponent(btnSacuvaj)
+                            .addComponent(txtKomentar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel8)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -285,30 +302,34 @@ public class Program extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3)))
+                            .addComponent(jLabel3))
+                        .addGap(4, 4, 4)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(textFieldPretraga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnPretraga)
-                            .addComponent(btnOcistiPretragu)
-                            .addComponent(btnPrikaziSve))))
-                .addGap(4, 4, 4)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                            .addComponent(btnPretraga1)
+                            .addComponent(btnPretraga2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnPrikaziSve)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnOcistiPretragu)))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnDodaj)
                     .addComponent(btnIzmeni)
                     .addComponent(btnObrisi)
                     .addComponent(jButton1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -395,7 +416,7 @@ public class Program extends javax.swing.JFrame {
 
     private void btnPretragaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPretragaActionPerformed
         // TODO add your handling code here:
-        pretraga();
+        pretragaProizvod();
     }//GEN-LAST:event_btnPretragaActionPerformed
 
     private void textFieldPretragaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldPretragaActionPerformed
@@ -410,6 +431,16 @@ public class Program extends javax.swing.JFrame {
         // TODO add your handling code here:
         prikaziSve();
     }//GEN-LAST:event_btnPrikaziSveActionPerformed
+
+    private void btnPretraga1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPretraga1ActionPerformed
+        // TODO add your handling code here:
+        pretragaOznaka();
+    }//GEN-LAST:event_btnPretraga1ActionPerformed
+
+    private void btnPretraga2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPretraga2ActionPerformed
+        // TODO add your handling code here:
+        pretragaStampac();
+    }//GEN-LAST:event_btnPretraga2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -453,15 +484,16 @@ public class Program extends javax.swing.JFrame {
         Connection connection = getKonekcija();
 
         String query = "SELECT toneriid, proizvodjac, tip, proizvod, oznaka, stampaci, kolicina from toneri";
+        String query2 = "SELECT toneriid, ifnull(proizvodjac, '/'), ifnull(tip, '/'), ifnull(proizvod, '/'), ifnull(oznaka, '/'), ifnull(stampaci, '/'), kolicina from toneri;";
         Statement st;
         ResultSet rs;
 
         try {
             st = connection.createStatement();
-            rs = st.executeQuery(query);
+            rs = st.executeQuery(query2);
             Toneri stampaci;
             while (rs.next()) {
-                stampaci = new Toneri(rs.getInt("toneriid"), rs.getString("Tip"), rs.getString("Proizvodjac"), rs.getString("Proizvod"), rs.getString("Oznaka"), rs.getString("Stampaci"), rs.getInt("Kolicina"));
+                stampaci = new Toneri(rs.getInt("toneriid"), rs.getString("ifnull(proizvodjac, '/')"), rs.getString("ifnull(tip, '/')"), rs.getString("ifnull(proizvod, '/')"), rs.getString("ifnull(oznaka, '/')"), rs.getString("ifnull(stampaci, '/')"), rs.getInt("Kolicina"));
                 stampaciList.add(stampaci);
             }
         } catch (Exception e) {
@@ -470,8 +502,8 @@ public class Program extends javax.swing.JFrame {
         return stampaciList;
     }
 
-    public void pretraga() {
-        ArrayList<Toneri> list = getPretraga();
+    public void pretragaProizvod() {
+        ArrayList<Toneri> list = getPretragaProizvod();
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         model.setRowCount(0);
         Object[] row = new Object[7];
@@ -489,7 +521,48 @@ public class Program extends javax.swing.JFrame {
         }
     }
 
-    public ArrayList<Toneri> getPretraga() {
+    public ArrayList<Toneri> getPretragaProizvod() {
+        ArrayList<Toneri> stampaciList = new ArrayList<Toneri>();
+        Connection connection = getKonekcija();
+
+        String query = "SELECT toneriid, proizvodjac, tip, proizvod, oznaka, stampaci, kolicina from toneri where proizvod like '%" + textFieldPretraga.getText() + "%';";
+        Statement st;
+        ResultSet rs;
+
+        try {
+            st = connection.createStatement();
+            rs = st.executeQuery(query);
+            Toneri stampaci;
+            while (rs.next()) {
+                stampaci = new Toneri(rs.getInt("toneriid"), rs.getString("Tip"), rs.getString("Proizvodjac"), rs.getString("Proizvod"), rs.getString("Oznaka"), rs.getString("Stampaci"), rs.getInt("Kolicina"));
+                stampaciList.add(stampaci);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return stampaciList;
+    }
+    //
+        public void pretragaOznaka() {
+        ArrayList<Toneri> list = getPretragaOznaka();
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.setRowCount(0);
+        Object[] row = new Object[7];
+        for (int i = 0; i < list.size(); i++) {
+            row[0] = list.get(i).getStampacID();
+            row[1] = list.get(i).getTip();
+            row[2] = list.get(i).getProizvodjac();
+            row[3] = list.get(i).getProizvod();
+            row[4] = list.get(i).getOznaka();
+            row[5] = list.get(i).getStampaci();
+            row[6] = list.get(i).getKolicina();
+
+            model.addRow(row);
+            //
+        }
+    }
+
+    public ArrayList<Toneri> getPretragaOznaka() {
         ArrayList<Toneri> stampaciList = new ArrayList<Toneri>();
         Connection connection = getKonekcija();
 
@@ -510,7 +583,48 @@ public class Program extends javax.swing.JFrame {
         }
         return stampaciList;
     }
+    
     //
+        public void pretragaStampac() {
+        ArrayList<Toneri> list = getPretragaStampac();
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.setRowCount(0);
+        Object[] row = new Object[7];
+        for (int i = 0; i < list.size(); i++) {
+            row[0] = list.get(i).getStampacID();
+            row[1] = list.get(i).getTip();
+            row[2] = list.get(i).getProizvodjac();
+            row[3] = list.get(i).getProizvod();
+            row[4] = list.get(i).getOznaka();
+            row[5] = list.get(i).getStampaci();
+            row[6] = list.get(i).getKolicina();
+
+            model.addRow(row);
+            //
+        }
+    }
+
+    public ArrayList<Toneri> getPretragaStampac() {
+        ArrayList<Toneri> stampaciList = new ArrayList<Toneri>();
+        Connection connection = getKonekcija();
+
+        String query = "SELECT toneriid, proizvodjac, tip, proizvod, oznaka, stampaci, kolicina from toneri where stampaci like '%" + textFieldPretraga.getText() + "%';";
+        Statement st;
+        ResultSet rs;
+
+        try {
+            st = connection.createStatement();
+            rs = st.executeQuery(query);
+            Toneri stampaci;
+            while (rs.next()) {
+                stampaci = new Toneri(rs.getInt("toneriid"), rs.getString("Tip"), rs.getString("Proizvodjac"), rs.getString("Proizvod"), rs.getString("Oznaka"), rs.getString("Stampaci"), rs.getInt("Kolicina"));
+                stampaciList.add(stampaci);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return stampaciList;
+    }
 
     public void prikaziSve() {
         ArrayList<Toneri> list = getStampac();
@@ -632,6 +746,8 @@ public class Program extends javax.swing.JFrame {
     private javax.swing.JButton btnObrisi;
     private javax.swing.JButton btnOcistiPretragu;
     private javax.swing.JButton btnPretraga;
+    private javax.swing.JButton btnPretraga1;
+    private javax.swing.JButton btnPretraga2;
     private javax.swing.JButton btnPrikaziSve;
     private javax.swing.JButton btnSacuvaj;
     private javax.swing.JButton jButton1;
@@ -641,7 +757,7 @@ public class Program extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
