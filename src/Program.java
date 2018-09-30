@@ -1,15 +1,12 @@
 
 import com.sun.org.apache.xpath.internal.operations.Plus;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.sql.*;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
-import net.proteanit.sql.DbUtils;
+
 
 public class Program extends javax.swing.JFrame {
 
@@ -350,10 +347,11 @@ public class Program extends javax.swing.JFrame {
     //insert update delete dugmad i dodavanje komentara
     private void btnDodajActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDodajActionPerformed
         int i = jTable1.getSelectedRow();
-        TableModel model = jTable1.getModel();  //nisam siguran zasto sam ovo pisao
-        String b = model.getValueAt(i, 0).toString();//ni ovo
+        //TableModel model = jTable1.getModel();  //nisam siguran zasto sam ovo pisao
+        //String b = model.getValueAt(i, 0).toString();//ni ovo
         String query = "INSERT INTO `zeleznica`.`toneri` (`proizvodjac`, tip, `proizvod`, `oznaka`, `stampaci`, `kolicina`) VALUES ('" + jTextField1.getText() + "','" + jTextField2.getText() + "', '" + jTextField3.getText() + "', '" + jTextField4.getText() + "', '" + jTextField5.getText() + "', '" + jTextField6.getText() + "');";
         executeSQlQuery(query, "Inserted");
+        prikaziSve();
 
 
     }//GEN-LAST:event_btnDodajActionPerformed
@@ -484,7 +482,7 @@ public class Program extends javax.swing.JFrame {
         ArrayList<Toneri> stampaciList = new ArrayList<Toneri>();
         Connection connection = getKonekcija();
 
-        String query2 = "SELECT toneriid, ifnull(proizvodjac, '/'), ifnull(tip, '/'), ifnull(proizvod, '/'), ifnull(oznaka, '/'), ifnull(stampaci, '/'), ifnull(kolicina, '0') from toneri;";
+        String query2 = "SELECT toneriid, ifnull(proizvodjac, '/'), ifnull(tip, '/'), ifnull(proizvod, '/'), ifnull(oznaka, '/'), ifnull(stampaci, '/'), ifnull(kolicina, '0') from toneri order by proizvodjac asc;";
         Statement st;
         ResultSet rs;
 
@@ -703,7 +701,7 @@ public class Program extends javax.swing.JFrame {
                 DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
                 model.setRowCount(0);
                 prikaziSve();
-                //JOptionPane.showMessageDialog(null, "Data " + message + " uspesno");
+                JOptionPane.showMessageDialog(null, "Data " + message + " uspesno");
             } else {
                 JOptionPane.showMessageDialog(null, "Doslo je do neke greske. " + message);
             }
